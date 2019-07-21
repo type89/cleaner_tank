@@ -24,11 +24,13 @@ class Application(tk.Frame):
 
     def create_widgets(self,master,left_duty,right_duty):
         frame1 = tk.Frame(master)
+
         self.left_label_area = tk.Label(frame1, text='L-Motor', relief=tk.FLAT, bd=2)
         self.right_label_area = tk.Label(frame1, text='R-Motor', relief=tk.FLAT, bd=2)
         self.left_duty = tk.Label(frame1, text=left_duty, relief=tk.FLAT, bd=2,background="white")
         self.right_duty = tk.Label(frame1, text=right_duty, relief=tk.FLAT, bd=2,background="white")
         self.space_area = tk.Label(frame1, text='', relief=tk.FLAT, bd=2)
+
         forward = tk.Button(frame1, text="↑", fg="blue", command=self.forward)
         backward = tk.Button(frame1, text="↓", fg="blue", command=self.backward)
         right = tk.Button(frame1, text="→", fg="green", command=self.right)
@@ -36,11 +38,13 @@ class Application(tk.Frame):
         RR = tk.Button(frame1, text=">>", fg="purple", command=self.RR)
         LL = tk.Button(frame1, text="<<", fg="purple", command=self.LL)
         stop = tk.Button(frame1, text="STOP", fg="red", command=self.stop)
+
         self.left_label_area.grid(row=0, column=0, columnspan=2, sticky="we")
         self.right_label_area.grid(row=0, column=3, columnspan=2, sticky="we")
         self.left_duty.grid(row=1, column=0, columnspan=2, sticky="we")
         self.right_duty.grid(row=1, column=3, columnspan=2, sticky="we")
         self.space_area.grid(row=2, column=0, columnspan=5, sticky="we")
+
         forward.grid(row=3, column=1, columnspan=3, sticky="we")
         LL.grid(row=4, column=0)
         left.grid(row=4, column=1)
@@ -48,6 +52,7 @@ class Application(tk.Frame):
         right.grid(row=4, column=3)
         RR.grid(row=4, column=4)
         backward.grid(row=5, column=1, columnspan=3, sticky="we")
+        
         frame1.pack(padx=5, pady=5)
 
     def send_command(self,command):
